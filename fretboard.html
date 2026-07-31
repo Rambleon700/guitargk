@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fretboard Trainer · Advanced Guitar Hub</title>
+  <meta name="description" content="Visualise scales, triads and sweep paths on the guitar fretboard" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="logo" aria-hidden="true">🎸</div>
+        <div class="brand-text">
+          <h1>Advanced Guitar Hub</h1>
+          <p class="tagline">Songs • Chords • Patterns • Practice • Fretboard</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-btn" data-page="home" href="index.html">Home</a>
+    <a class="nav-btn" data-page="songs" href="songs.html">Songs</a>
+    <a class="nav-btn" data-page="chords" href="chords.html">Chords</a>
+    <a class="nav-btn" data-page="patterns" href="patterns.html">Patterns</a>
+    <a class="nav-btn" data-page="practice" href="practice.html">Practice</a>
+    <a class="nav-btn active" data-page="fretboard" href="fretboard.html">Fretboard</a>
+  </nav>
+
+  <main>
+    <div class="section-header">
+      <h2>Fretboard Trainer</h2>
+      <p class="section-subtitle">Visualise scales, triads and sweep paths.</p>
+    </div>
+
+    <div class="fretboard-controls">
+      <label>
+        Root:
+        <select id="fb-root-select" aria-label="Fretboard root">
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E" selected>E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+        </select>
+      </label>
+
+      <label>
+        Scale:
+        <select id="fb-scale-select" aria-label="Fretboard scale">
+          <option value="major">Major</option>
+          <option value="minor">Minor</option>
+          <option value="pentatonic-major">Pentatonic Major</option>
+          <option value="pentatonic-minor" selected>Pentatonic Minor</option>
+        </select>
+      </label>
+
+      <label>
+        Overlay:
+        <select id="fb-overlay-select" aria-label="Fretboard overlay">
+          <option value="none">None</option>
+          <option value="triads">Triads</option>
+          <option value="arpeggios">Arpeggios</option>
+          <option value="sweeps">Sweep Paths</option>
+        </select>
+      </label>
+
+      <label>
+        Max Fret:
+        <input id="fb-max-fret-input" type="number" min="12" max="24" value="12" aria-label="Max fret" />
+      </label>
+
+      <button id="fb-render-btn" class="btn accent">Render Fretboard</button>
+    </div>
+
+    <canvas id="fretboard-canvas" width="900" height="220" aria-label="Fretboard canvas"></canvas>
+  </main>
+
+  <footer class="app-footer">
+    Advanced Guitar Hub · Modular practice tools
+  </footer>
+
+  <script type="module" src="fretboard.js"></script>
+</body>
+</html>

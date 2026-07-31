@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Strumming Patterns · Advanced Guitar Hub</title>
+  <meta name="description" content="Visualise and animate guitar strumming patterns" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="logo" aria-hidden="true">🎸</div>
+        <div class="brand-text">
+          <h1>Advanced Guitar Hub</h1>
+          <p class="tagline">Songs • Chords • Patterns • Practice • Fretboard</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-btn" data-page="home" href="index.html">Home</a>
+    <a class="nav-btn" data-page="songs" href="songs.html">Songs</a>
+    <a class="nav-btn" data-page="chords" href="chords.html">Chords</a>
+    <a class="nav-btn active" data-page="patterns" href="patterns.html">Patterns</a>
+    <a class="nav-btn" data-page="practice" href="practice.html">Practice</a>
+    <a class="nav-btn" data-page="fretboard" href="fretboard.html">Fretboard</a>
+  </nav>
+
+  <main>
+    <div class="section-header">
+      <h2>Strumming Patterns</h2>
+      <p class="section-subtitle">Visualise and play pattern animations.</p>
+    </div>
+
+    <div class="patterns-controls">
+      <label>
+        Pattern:
+        <select id="pattern-select" aria-label="Select pattern">
+          <option value="D D U U D U">Classic Pop (D D U U D U)</option>
+          <option value="D U D U">Straight Eighths (D U D U)</option>
+          <option value="D D D D">All Downstrokes</option>
+          <option value="D D D U">Driving Pop</option>
+          <option value="Reggae">Reggae Offbeat</option>
+          <option value="Fingerpicked">Fingerpicked Arpeggio</option>
+        </select>
+      </label>
+      <button id="pattern-play-btn" class="btn accent">Play Pattern Animation</button>
+      <button id="pattern-stop-btn" class="btn">Stop</button>
+    </div>
+
+    <div id="pattern-visual" class="pattern-visual" aria-live="polite"></div>
+  </main>
+
+  <footer class="app-footer">
+    Advanced Guitar Hub · Modular practice tools
+  </footer>
+
+  <script type="module" src="patterns.js"></script>
+</body>
+</html>

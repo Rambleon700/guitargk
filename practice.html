@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Practice Planner · Advanced Guitar Hub</title>
+  <meta name="description" content="Generate short focused guitar practice routines" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="logo" aria-hidden="true">🎸</div>
+        <div class="brand-text">
+          <h1>Advanced Guitar Hub</h1>
+          <p class="tagline">Songs • Chords • Patterns • Practice • Fretboard</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-btn" data-page="home" href="index.html">Home</a>
+    <a class="nav-btn" data-page="songs" href="songs.html">Songs</a>
+    <a class="nav-btn" data-page="chords" href="chords.html">Chords</a>
+    <a class="nav-btn" data-page="patterns" href="patterns.html">Patterns</a>
+    <a class="nav-btn active" data-page="practice" href="practice.html">Practice</a>
+    <a class="nav-btn" data-page="fretboard" href="fretboard.html">Fretboard</a>
+  </nav>
+
+  <main>
+    <div class="section-header">
+      <h2>Practice Planner</h2>
+      <p class="section-subtitle">Generate short, focused routines.</p>
+    </div>
+
+    <div class="practice-controls">
+      <label>
+        Focus:
+        <select id="practice-focus-select" aria-label="Practice focus">
+          <option value="songs">Songs</option>
+          <option value="chords">Chords</option>
+          <option value="patterns">Patterns</option>
+          <option value="fretboard">Fretboard</option>
+        </select>
+      </label>
+
+      <label>
+        Duration (minutes):
+        <input id="practice-duration-input" type="number" min="5" max="60" value="15" aria-label="Practice duration" />
+      </label>
+
+      <button id="practice-generate-btn" class="btn accent">Generate Practice Plan</button>
+    </div>
+
+    <div id="practice-plan" class="practice-plan" aria-live="polite"></div>
+  </main>
+
+  <footer class="app-footer">
+    Advanced Guitar Hub · Modular practice tools
+  </footer>
+
+  <script type="module" src="practice.js"></script>
+</body>
+</html>

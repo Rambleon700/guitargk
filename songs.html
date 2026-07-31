@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Songs Library · Advanced Guitar Hub</title>
+  <meta name="description" content="Filter songs by chord count and difficulty" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="logo" aria-hidden="true">🎸</div>
+        <div class="brand-text">
+          <h1>Advanced Guitar Hub</h1>
+          <p class="tagline">Songs • Chords • Patterns • Practice • Fretboard</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-btn" data-page="home" href="index.html">Home</a>
+    <a class="nav-btn active" data-page="songs" href="songs.html">Songs</a>
+    <a class="nav-btn" data-page="chords" href="chords.html">Chords</a>
+    <a class="nav-btn" data-page="patterns" href="patterns.html">Patterns</a>
+    <a class="nav-btn" data-page="practice" href="practice.html">Practice</a>
+    <a class="nav-btn" data-page="fretboard" href="fretboard.html">Fretboard</a>
+  </nav>
+
+  <main>
+    <div class="section-header">
+      <h2>Songs Library</h2>
+      <p class="section-subtitle">Filter by chord count and difficulty to find songs.</p>
+    </div>
+
+    <div class="filters-row" role="region" aria-label="Song filters">
+      <div class="filter-group" aria-label="Chord count">
+        <span class="filter-label">Chord Count:</span>
+        <button class="filter-btn chord-count-filter active" data-filter="all">All</button>
+        <button class="filter-btn chord-count-filter" data-filter="2">2</button>
+        <button class="filter-btn chord-count-filter" data-filter="3">3</button>
+        <button class="filter-btn chord-count-filter" data-filter="4plus">4+</button>
+      </div>
+
+      <div class="filter-group" aria-label="Difficulty">
+        <span class="filter-label">Difficulty:</span>
+        <button class="filter-btn difficulty-filter active" data-filter="all">All</button>
+        <button class="filter-btn difficulty-filter" data-filter="Easy">Easy</button>
+        <button class="filter-btn difficulty-filter" data-filter="Intermediate">Intermediate</button>
+        <button class="filter-btn difficulty-filter" data-filter="Advanced">Advanced</button>
+      </div>
+    </div>
+
+    <div id="songs-grid" class="cards-grid" aria-live="polite"></div>
+  </main>
+
+  <!-- Song Modal -->
+  <div id="song-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="song-modal-close" aria-label="Close">×</button>
+
+      <div id="song-modal-body">
+        <h2 id="modal-song-title"></h2>
+        <p id="modal-song-artist" class="muted"></p>
+        <p id="modal-song-tips" class="muted" style="margin-top:0.5rem"></p>
+
+        <div class="modal-row">
+          <div class="modal-column">
+            <h3>Chords</h3>
+            <div id="modal-song-chords" class="modal-chords-list"></div>
+          </div>
+
+          <div class="modal-column">
+            <h3>Pattern</h3>
+            <p id="modal-song-pattern"></p>
+            <button id="modal-pattern-play-btn" class="btn" style="margin-top:0.5rem">Play Pattern Animation</button>
+            <div id="modal-pattern-visual" class="pattern-visual" style="margin-top:0.75rem"></div>
+          </div>
+        </div>
+
+        <hr />
+
+        <h3 style="font-size:0.95rem;margin-bottom:0.5rem">Fretboard (Song Context)</h3>
+        <div class="modal-fretboard-controls">
+          <label>
+            Overlay:
+            <select id="modal-fb-overlay-select">
+              <option value="none">None</option>
+              <option value="triads">Triads</option>
+              <option value="arpeggios">Arpeggios</option>
+              <option value="sweeps">Sweep Paths</option>
+            </select>
+          </label>
+          <button id="modal-fb-render-btn" class="btn accent">Render Song Fretboard</button>
+        </div>
+        <canvas id="modal-fretboard-canvas" width="900" height="220" aria-label="Modal fretboard canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    Advanced Guitar Hub · Modular practice tools
+  </footer>
+
+  <script type="module" src="songs.js"></script>
+</body>
+</html>

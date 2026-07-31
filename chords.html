@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chord Library · Advanced Guitar Hub</title>
+  <meta name="description" content="Search and view guitar chord diagrams" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="logo" aria-hidden="true">🎸</div>
+        <div class="brand-text">
+          <h1>Advanced Guitar Hub</h1>
+          <p class="tagline">Songs • Chords • Patterns • Practice • Fretboard</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-btn" data-page="home" href="index.html">Home</a>
+    <a class="nav-btn" data-page="songs" href="songs.html">Songs</a>
+    <a class="nav-btn active" data-page="chords" href="chords.html">Chords</a>
+    <a class="nav-btn" data-page="patterns" href="patterns.html">Patterns</a>
+    <a class="nav-btn" data-page="practice" href="practice.html">Practice</a>
+    <a class="nav-btn" data-page="fretboard" href="fretboard.html">Fretboard</a>
+  </nav>
+
+  <main>
+    <div class="section-header">
+      <h2>Chord Library</h2>
+      <p class="section-subtitle">Click a chord to render its diagram.</p>
+    </div>
+
+    <div class="chord-search-row">
+      <input id="chord-search-input" type="text" placeholder="Search chord (e.g. Am, G7)" aria-label="Search chord" />
+      <button id="chord-search-btn" class="btn">Search</button>
+    </div>
+
+    <div id="chords-list" class="chords-list" role="list"></div>
+
+    <div class="chord-diagram-wrapper">
+      <h3>Chord Diagram</h3>
+      <canvas id="chord-canvas" width="260" height="200" aria-label="Chord diagram"></canvas>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    Advanced Guitar Hub · Modular practice tools
+  </footer>
+
+  <script type="module" src="chords.js"></script>
+</body>
+</html>
